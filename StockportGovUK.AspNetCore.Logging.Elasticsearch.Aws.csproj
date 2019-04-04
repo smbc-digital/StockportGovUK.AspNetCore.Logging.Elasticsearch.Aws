@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws</PackageId>
+    <Title>A package that wraps setup and configuration of serilog and log to Elasticsearch running in AWS</Title>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Version>0.1.1</Version>
+    <Authors>Colin Lees, Jon Chiles, Jon Hadley</Authors>
+    <Company>Stockport Council</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Elasticsearch.Net" Version="6.6.0" />
+    <PackageReference Include="Elasticsearch.Net.Aws" Version="6.0.0" />
+    <PackageReference Include="Serilog" Version="2.8.0" />
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="7.1.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+  </ItemGroup>
+</Project>
