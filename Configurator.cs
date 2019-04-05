@@ -10,18 +10,18 @@ namespace StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws
 {
     public class Configurator
     {
-        private static string defaultLogConfigurationKeyName = "ElasticSearchAwsConfiguration";
-        private static string defaultLogConfigurationSecretsKeyName = "ElasticSearchAwsSecretsConfiguration";
+        private static string defaultLogConfigurationKey = "ElasticSearchAwsConfiguration";
+        private static string defaultLogConfigurationSecretsKey = "ElasticSearchAwsSecretsConfiguration";
 
         public static void Configure(IConfiguration appConfiguration, LoggerConfiguration loggerConfiguration)
         {
-            Configure(appConfiguration, loggerConfiguration, defaultLogConfigurationKeyName, defaultLogConfigurationSecretsKeyName);
+            Configure(appConfiguration, loggerConfiguration, defaultLogConfigurationKey, defaultLogConfigurationSecretsKey);
         }
 
-        public static void Configure(IConfiguration appConfiguration, LoggerConfiguration loggerConfiguration, string logConfigurationKeyName, string logSecretConfigurationKeyName)
+        public static void Configure(IConfiguration appConfiguration, LoggerConfiguration loggerConfiguration, string logConfigurationKey, string logSecretConfigurationKey)
         {
-            var logConfigurationSection = appConfiguration.GetSection(logConfigurationKeyName);
-            var logSecretConfigurationSection = appConfiguration.GetSection(logSecretConfigurationKeyName);
+            var logConfigurationSection = appConfiguration.GetSection(logConfigurationKey);
+            var logSecretConfigurationSection = appConfiguration.GetSection(logSecretConfigurationKey);
             var logConfiguration = new LogConfiguration();
             var logSecretConfiguration = new LogSecretConfiguration();
         
