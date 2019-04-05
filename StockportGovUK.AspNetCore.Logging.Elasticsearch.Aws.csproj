@@ -3,7 +3,7 @@
     <PackageId>StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws</PackageId>
     <Title>A package that wraps setup and configuration of serilog and log to Elasticsearch running in AWS</Title>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Authors>Colin Lees, Jon Chiles, Jon Hadley</Authors>
     <Company>Stockport Council</Company>
   </PropertyGroup>
