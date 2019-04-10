@@ -3,7 +3,7 @@ using Serilog.Events;
 
 namespace StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws
 {
- public class LogConfiguration
+    public class LogConfiguration
     {
         public bool Enabled { get; set; }
 
