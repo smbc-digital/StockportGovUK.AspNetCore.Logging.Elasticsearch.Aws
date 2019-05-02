@@ -13,9 +13,23 @@ namespace StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws
         private static string defaultLogConfigurationKey = "ElasticSearchAwsConfiguration";
         private static string defaultLogConfigurationSecretsKey = "ElasticSearchAwsSecretsConfiguration";
 
+        public static Serilog.Core.Logger Create(IConfiguration appConfiguration, LoggerConfiguration loggerConfiguration)
+        {
+            Configure(appConfiguration, loggerConfiguration);
+
+            return loggerConfiguration.CreateLogger();
+        }
+
         public static void Configure(IConfiguration appConfiguration, LoggerConfiguration loggerConfiguration)
         {
             Configure(appConfiguration, loggerConfiguration, defaultLogConfigurationKey, defaultLogConfigurationSecretsKey);
+        }
+
+        public static Serilog.Core.Logger Create(IConfiguration appConfiguration, LoggerConfiguration loggerConfiguration, string logConfigurationKey, string logSecretConfigurationKey)
+        {
+            Configure(appConfiguration, loggerConfiguration, defaultLogConfigurationKey, defaultLogConfigurationSecretsKey);
+
+            return loggerConfiguration.CreateLogger();
         }
 
         public static void Configure(IConfiguration appConfiguration, LoggerConfiguration loggerConfiguration, string logConfigurationKey, string logSecretConfigurationKey)
@@ -35,10 +49,17 @@ namespace StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws
                 logConfiguration.Enabled = false;
             }
 
-            Configure(appConfiguration, loggerConfiguration, logConfiguration, logSecretConfiguration);
+            Configure(loggerConfiguration, logConfiguration, logSecretConfiguration);
         }
 
-        public static void Configure(IConfiguration appConfiguration, LoggerConfiguration loggerConfiguration, LogConfiguration logConfiguration, LogSecretConfiguration logSecretConfiguration)
+        public static Serilog.Core.Logger Create(LoggerConfiguration loggerConfiguration, LogConfiguration logConfiguration, LogSecretConfiguration logSecretConfiguration)
+        {
+            Configure(loggerConfiguration, logConfiguration, logSecretConfiguration);
+
+            return loggerConfiguration.CreateLogger();
+        }
+
+        public static void Configure(LoggerConfiguration loggerConfiguration, LogConfiguration logConfiguration, LogSecretConfiguration logSecretConfiguration)
         {
             if (!logConfiguration.Enabled)
             {

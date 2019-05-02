@@ -3,7 +3,7 @@ using Serilog.Events;
 
 namespace StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws
 {
- public class LogConfiguration
+    public class LogConfiguration
     {
         public bool Enabled { get; set; }
 
@@ -19,7 +19,7 @@ namespace StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws
         {
             get
             {
-                return string.IsNullOrEmpty(Url) ? new Uri("http://www.stockport.gov.uk") : new Uri(Url);
+                return string.IsNullOrEmpty(Url) ? throw new Exception("A url must be set") : new Uri(Url);
             }
         }
 
