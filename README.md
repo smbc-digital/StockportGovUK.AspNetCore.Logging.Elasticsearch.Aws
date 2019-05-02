@@ -3,7 +3,7 @@ This package wraps the setup and configuration of Serilog for logging to Elastic
 
 The default convention for configuration files is as below:
 ```json
-"ElasticSearchAwsConfiguration": {
+"ElasticsearchAwsConfiguration": {
     "Region": "[AWS Region]<string>",
     "IndexFormat": "[Index Format]<string>",
     "InlineFields": false,
@@ -11,7 +11,7 @@ The default convention for configuration files is as below:
     "Enabled": false,
     "Url": "[Elasticsearch URL]<string>"
 }
-"ElasticSearchAwsSecretsConfiguration": {
+"ElasticsearchAwsSecretsConfiguration": {
     "AccessKey": "[AWS Access Key]<string>",
     "SecretKey": "[AWS Secret Key]<string>"
 }
@@ -22,12 +22,8 @@ Enable configuration in Startup as per example below:
 public void ConfigureServices(IServiceCollection services)
 {
     // Your logger config here eg.
-    var loggerConfiguration = new LoggerConfiguration()
-        .ReadFrom
-        .Configuration(Configuration)
-
-    Configurator.Configure(Configuration, loggerConfiguration);
-
-    Log.Logger = loggerConfiguration.CreateLogger();
+    Log.Logger = new LoggerConfiguration()
+        .ReadFrom.Configuration(Configuration)
+        .WriteToElasticsearchAws(Configuration);
 }
 ```
