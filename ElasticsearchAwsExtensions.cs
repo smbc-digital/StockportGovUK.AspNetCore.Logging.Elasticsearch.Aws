@@ -19,6 +19,12 @@ namespace StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws
         public static LoggerConfiguration WriteToElasticsearchAws(this LoggerConfiguration loggerConfiguration, IConfiguration appConfiguration)
         {
             SetConfiguration(appConfiguration);
+
+            if (logConfiguration.Enabled)
+            {
+                return loggerConfiguration;
+            }
+
             CreateSinkOptions(logConfiguration, logSecretConfiguration);
             
             loggerConfiguration.WriteTo.Elasticsearch(elasticsearchSinkOptions);
@@ -30,7 +36,7 @@ namespace StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws
         {
             var logConfigurationSection = appConfiguration.GetSection(logConfigurationKey);
             var logSecretConfigurationSection = appConfiguration.GetSection(logSecretConfigurationKey);
-        
+
             if (logConfigurationSection.AsEnumerable().Any() && logSecretConfigurationSection.AsEnumerable().Any())
             {
                 logConfigurationSection.Bind(logConfiguration);
