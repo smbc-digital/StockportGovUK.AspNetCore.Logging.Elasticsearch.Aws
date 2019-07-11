@@ -20,7 +20,7 @@ namespace StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws
         {
             SetConfiguration(appConfiguration);
 
-            if (logConfiguration.Enabled)
+            if (!logConfiguration.Enabled)
             {
                 return loggerConfiguration;
             }
