@@ -43,11 +43,8 @@
 - [Features](#features)
 - [Example](#example)
 - [Philosophy](#philosophy)
-- [Things we do](#things-we-do)
-- [FAQ](#faq)
-- [API](#api)
+- [Setup](#Setup)
 - [Installation](#installation)
-- [See Also](#see-also)
 - [Support](#support)
 
 ## Features
