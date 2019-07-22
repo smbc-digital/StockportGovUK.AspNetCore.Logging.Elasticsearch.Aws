@@ -7,7 +7,7 @@
   <strong>You're only as good as logging!</strong>
 </div>
 <div align="center">
-  A NuGet package to encapsulate [Serilog.Sinks.Elasticsearch](https://www.nuget.org/packages/Serilog.Sinks.Elasticsearch) configuration for logging to Elasticsearch running in AWS
+  A NuGet package to encapsulate <a href="https://www.nuget.org/packages/Serilog.Sinks.Elasticsearch">Serilog.Sinks.Elasticsearch</a> configuration for logging to Elasticsearch running in AWS
 </div>
 
 <br />
