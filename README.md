@@ -11,11 +11,16 @@
 </div>
 
 <br />
-
 <div align="center">
-  ![Nuget](https://img.shields.io/nuget/dt/StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws.svg?style=flat-square)
-  ![Nuget](https://img.shields.io/nuget/v/StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws.svg?style=flat-square)
-  ![Stability](https://img.shields.io/badge/stability-stable-green.svg?style=flat-square)
+  <!-- Version -->
+  <img src="https://img.shields.io/nuget/v/StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws.svg?style=flat-square"
+    alt="Version" />
+  <!-- Downloads -->
+  <img src="https://img.shields.io/nuget/dt/StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws.svg?style=flat-square"
+    alt="Download" />
+  <!-- Stability -->
+  <img src="https://img.shields.io/badge/stability-stable-green.svg?style=flat-square"
+       alt="Stability" />
 </div>
 
 <div align="center">
