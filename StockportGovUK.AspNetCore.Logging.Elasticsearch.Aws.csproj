@@ -2,21 +2,21 @@
   <PropertyGroup>
     <PackageId>StockportGovUK.AspNetCore.Logging.Elasticsearch.Aws</PackageId>
     <Title>A package that wraps setup and configuration of serilog and log to Elasticsearch running in AWS</Title>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <VersionPrefix>0.5.0</VersionPrefix>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <VersionPrefix>1.0.0</VersionPrefix>
     <Authors>Colin Lees, Jon Chiles, Jon Hadley</Authors>
     <Company>Stockport Council</Company>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.5" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Elasticsearch.Net" Version="6.6.0" />
     <PackageReference Include="Elasticsearch.Net.Aws" Version="6.0.0" />
-    <PackageReference Include="Serilog" Version="2.8.0" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
     <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="7.1.0" />
-    <PackageReference Include="System.IO.Compression.ZipFile" Version="4.3.0" />
-    <PackageReference Include="System.Net.Http" Version="4.3.4" />
-    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
   <PropertyGroup>
